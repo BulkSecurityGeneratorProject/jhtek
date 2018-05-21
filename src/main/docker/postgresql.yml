@@ -1,0 +1,11 @@
+version: '2'
+services:
+    jhtek-postgresql:
+        image: postgres:9.6.5
+        # volumes:
+        #     - ~/volumes/jhipster/jhtek/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=jhtek
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

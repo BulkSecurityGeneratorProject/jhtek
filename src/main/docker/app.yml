@@ -1,0 +1,14 @@
+version: '2'
+services:
+    jhtek-app:
+        image: jhtek
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://jhtek-postgresql:5432/jhtek
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+        ports:
+            - 8080:8080
+    jhtek-postgresql:
+        extends:
+            file: postgresql.yml
+            service: jhtek-postgresql
